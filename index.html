@@ -1,128 +1,428 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About My Family - Writing Exercise</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background:#f4f6f9;
-}
+  <title>Advanced 2 Listening Task</title>
 
-.container{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
+  <style>
 
-h1,h2{
-    color:#2c3e50;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-textarea{
-    width:100%;
-    min-height:120px;
-    padding:10px;
-    margin-top:10px;
-}
+    body{
+      font-family:Arial, sans-serif;
+      background:#f4f7fb;
+      color:#333;
+      padding:20px;
+      line-height:1.6;
+    }
 
-input{
-    padding:8px;
-    margin:5px;
-}
+    .container{
+      max-width:1100px;
+      margin:auto;
+      background:white;
+      padding:35px;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
 
-button{
-    background:#3498db;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
+    h1{
+      text-align:center;
+      color:#2c3e50;
+      margin-bottom:10px;
+    }
 
-button:hover{
-    background:#2980b9;
-}
+    h2{
+      color:#34495e;
+      margin-top:35px;
+      margin-bottom:20px;
+      border-bottom:2px solid #ddd;
+      padding-bottom:10px;
+    }
 
-.correct{
-    color:green;
-    font-weight:bold;
-}
+    .info-box{
+      background:#eef6ff;
+      border-left:5px solid #3498db;
+      padding:18px;
+      border-radius:8px;
+      margin-bottom:25px;
+    }
 
-.wrong{
-    color:red;
-    font-weight:bold;
-}
-</style>
+    .video-link{
+      margin-bottom:30px;
+    }
+
+    .video-link a{
+      color:#2980b9;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .question{
+      background:#fafafa;
+      padding:18px;
+      border-radius:8px;
+      margin-bottom:18px;
+    }
+
+    .question p{
+      font-weight:bold;
+      margin-bottom:10px;
+    }
+
+    label{
+      display:block;
+      margin:8px 0;
+      cursor:pointer;
+    }
+
+    input[type="radio"]{
+      margin-right:8px;
+    }
+
+    button{
+      width:100%;
+      padding:15px;
+      background:#3498db;
+      color:white;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+      margin-top:25px;
+    }
+
+    button:hover{
+      background:#2980b9;
+    }
+
+    .result{
+      margin-top:25px;
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .correct{
+      color:green;
+    }
+
+    .wrong{
+      color:red;
+    }
+
+    .answer-key{
+      margin-top:40px;
+      background:#f9f9f9;
+      padding:25px;
+      border-radius:10px;
+    }
+
+    .answer-key h3{
+      color:#2c3e50;
+      margin-bottom:15px;
+    }
+
+    .answer-key ol{
+      margin-left:20px;
+    }
+
+    .answer-key li{
+      margin-bottom:8px;
+    }
+
+    @media(max-width:768px){
+
+      .container{
+        padding:20px;
+      }
+
+      h1{
+        font-size:26px;
+      }
+
+    }
+
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-<hr>
+    <h1>ADVANCED 2 LISTENING TASK</h1>
 
-<h2>Part A: Fill in the blanks</h2>
+    <div class="info-box">
 
-<p>1. Kelly lives in
-<input id="q1"></p>
+      <strong>Topic:</strong> The Science of Happiness
 
-<p>2. Kelly's mother's name is
-<input id="q2"></p>
+      <br><br>
 
-<p>3. Kelly's father works in a
-<input id="q3"></p>
+      <strong>Instructions:</strong><br>
+      Listen to the podcast carefully. Then, choose the best answer
+      (a, b, c, or d) for each question.
 
-<p>4. Kelly's sister loves listening to
-<input id="q4"></p>
+    </div>
 
-<p>5. Brandy is a pet
-<input id="q5"></p>
+    <div class="video-link">
 
-<button onclick="checkAnswers()">Check Answers</button>
+      <strong>Video Link:</strong><br>
 
-<p id="result"></p>
+      <a href="https://youtu.be/m7MHAU6b2RY?si=wT19PLLnxDTkgyNS" target="_blank">
+        Watch the Podcast
+      </a>
 
-<hr>
+    </div>
 
-<h2>Part B: Write About Your Family</h2>
+    <form id="quizForm">
 
-<p>Write 5–8 sentences about your family.</p>
+      <h2>Multiple Choice Questions</h2>
 
-<textarea placeholder="My name is..."></textarea>
+      <div class="question">
+        <p>1. What is the main purpose of the podcast?</p>
 
-</div>
+        <label><input type="radio" name="q1" value="a"> a. To explain different types of emotions</label>
+        <label><input type="radio" name="q1" value="b"> b. To discuss scientific perspectives on happiness</label>
+        <label><input type="radio" name="q1" value="c"> c. To compare happiness in different countries</label>
+        <label><input type="radio" name="q1" value="d"> d. To describe psychological disorders</label>
+      </div>
 
-<script>
-function checkAnswers(){
+      <div class="question">
+        <p>2. According to the speaker, happiness is best described as:</p>
 
-let score = 0;
+        <label><input type="radio" name="q2" value="a"> a. constant excitement and pleasure</label>
+        <label><input type="radio" name="q2" value="b"> b. financial success and achievement</label>
+        <label><input type="radio" name="q2" value="c"> c. a combination of emotions, satisfaction, and purpose</label>
+        <label><input type="radio" name="q2" value="d"> d. freedom from negative experiences</label>
+      </div>
 
-const answers = {
-q1:"california",
-q2:"carmen",
-q3:"bank",
-q4:"music",
-q5:"dog"
-};
+      <div class="question">
+        <p>3. What does the speaker imply about difficult days?</p>
 
-for(let id in answers){
-let user = document.getElementById(id).value.trim().toLowerCase();
+        <label><input type="radio" name="q3" value="a"> a. They prevent people from being happy</label>
+        <label><input type="radio" name="q3" value="b"> b. They are a normal part of life</label>
+        <label><input type="radio" name="q3" value="c"> c. They should always be avoided</label>
+        <label><input type="radio" name="q3" value="d"> d. They reduce long-term happiness permanently</label>
+      </div>
 
-if(user === answers[id]){
-score++;
-}
-}
+      <div class="question">
+        <p>4. Which factor contributes the LEAST to happiness according to the studies mentioned?</p>
 
-document.getElementById("result").innerHTML =
-"You got " + score + " out of 5 correct!";
-}
-</script>
+        <label><input type="radio" name="q4" value="a"> a. genetics</label>
+        <label><input type="radio" name="q4" value="b"> b. life circumstances</label>
+        <label><input type="radio" name="q4" value="c"> c. daily habits</label>
+        <label><input type="radio" name="q4" value="d"> d. social interaction</label>
+      </div>
+
+      <div class="question">
+        <p>5. Why does the speaker mention neuroscience?</p>
+
+        <label><input type="radio" name="q5" value="a"> a. To explain how the brain responds to positive activities</label>
+        <label><input type="radio" name="q5" value="b"> b. To criticize psychological research</label>
+        <label><input type="radio" name="q5" value="c"> c. To compare science with philosophy</label>
+        <label><input type="radio" name="q5" value="d"> d. To describe mental illnesses</label>
+      </div>
+
+      <div class="question">
+        <p>6. What is the effect of gratitude according to the podcast?</p>
+
+        <label><input type="radio" name="q6" value="a"> a. It increases physical strength</label>
+        <label><input type="radio" name="q6" value="b"> b. It changes how the brain focuses attention</label>
+        <label><input type="radio" name="q6" value="c"> c. It eliminates stress completely</label>
+        <label><input type="radio" name="q6" value="d"> d. It improves memory directly</label>
+      </div>
+
+      <div class="question">
+        <p>7. What does the term “happiness set point” suggest?</p>
+
+        <label><input type="radio" name="q7" value="a"> a. Happiness changes permanently after major events</label>
+        <label><input type="radio" name="q7" value="b"> b. People naturally return to a usual level of happiness</label>
+        <label><input type="radio" name="q7" value="c"> c. Happiness depends entirely on wealth</label>
+        <label><input type="radio" name="q7" value="d"> d. Happiness cannot be influenced by habits</label>
+      </div>
+
+      <div class="question">
+        <p>8. Which statement is supported by the podcast?</p>
+
+        <label><input type="radio" name="q8" value="a"> a. Healthy habits contribute to emotional well-being</label>
+        <label><input type="radio" name="q8" value="b"> b. Happiness only depends on external success</label>
+        <label><input type="radio" name="q8" value="c"> c. Exercise has little impact on mental health</label>
+        <label><input type="radio" name="q8" value="d"> d. Social interaction is not very important</label>
+      </div>
+
+      <div class="question">
+        <p>9. Why does the speaker encourage small daily changes?</p>
+
+        <label><input type="radio" name="q9" value="a"> a. Because happiness is impossible to develop quickly</label>
+        <label><input type="radio" name="q9" value="b"> b. Because small habits can gradually improve well-being</label>
+        <label><input type="radio" name="q9" value="c"> c. Because people dislike major lifestyle changes</label>
+        <label><input type="radio" name="q9" value="d"> d. Because science has rejected larger goals</label>
+      </div>
+
+      <div class="question">
+        <p>10. What is the speaker’s overall message about happiness?</p>
+
+        <label><input type="radio" name="q10" value="a"> a. Happiness is mostly controlled by luck</label>
+        <label><input type="radio" name="q10" value="b"> b. Happiness is temporary and unstable</label>
+        <label><input type="radio" name="q10" value="c"> c. Happiness can be strengthened through practice and habits</label>
+        <label><input type="radio" name="q10" value="d"> d. Happiness is different for every individual, so science is not useful</label>
+      </div>
+
+      <h2>True or False</h2>
+
+      <div class="question">
+        <p>1. The speaker states that happiness means feeling positive emotions all the time.</p>
+
+        <label><input type="radio" name="tf1" value="T"> True</label>
+        <label><input type="radio" name="tf1" value="F"> False</label>
+      </div>
+
+      <div class="question">
+        <p>2. Research suggests that people can influence a significant part of their happiness.</p>
+
+        <label><input type="radio" name="tf2" value="T"> True</label>
+        <label><input type="radio" name="tf2" value="F"> False</label>
+      </div>
+
+      <div class="question">
+        <p>3. Oxytocin is connected to social relationships and feelings of connection.</p>
+
+        <label><input type="radio" name="tf3" value="T"> True</label>
+        <label><input type="radio" name="tf3" value="F"> False</label>
+      </div>
+
+      <div class="question">
+        <p>4. The podcast argues that happiness depends entirely on genetics.</p>
+
+        <label><input type="radio" name="tf4" value="T"> True</label>
+        <label><input type="radio" name="tf4" value="F"> False</label>
+      </div>
+
+      <div class="question">
+        <p>5. The speaker believes that practicing gratitude can improve mental focus on positive experiences.</p>
+
+        <label><input type="radio" name="tf5" value="T"> True</label>
+        <label><input type="radio" name="tf5" value="F"> False</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">
+        Submit Answers
+      </button>
+
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <div class="answer-key">
+
+      <h3>Answer Key</h3>
+
+      <h4>Multiple Choice</h4>
+
+      <ol>
+        <li>b</li>
+        <li>c</li>
+        <li>b</li>
+        <li>b</li>
+        <li>a</li>
+        <li>b</li>
+        <li>b</li>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+      </ol>
+
+      <h4>True or False</h4>
+
+      <ol>
+        <li>False</li>
+        <li>True</li>
+        <li>True</li>
+        <li>False</li>
+        <li>True</li>
+      </ol>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function checkAnswers(){
+
+      const answers = {
+
+        q1:"b",
+        q2:"c",
+        q3:"b",
+        q4:"b",
+        q5:"a",
+        q6:"b",
+        q7:"b",
+        q8:"a",
+        q9:"b",
+        q10:"c",
+
+        tf1:"F",
+        tf2:"T",
+        tf3:"T",
+        tf4:"F",
+        tf5:"T"
+
+      };
+
+      let score = 0;
+      let total = 15;
+
+      for(let key in answers){
+
+        const options = document.getElementsByName(key);
+
+        for(let option of options){
+
+          option.parentElement.style.color = "#333";
+
+          if(option.checked){
+
+            if(option.value === answers[key]){
+
+              score++;
+              option.parentElement.style.color = "green";
+
+            } else {
+
+              option.parentElement.style.color = "red";
+
+            }
+
+          }
+
+        }
+
+      }
+
+      const result = document.getElementById("result");
+
+      result.innerHTML = `Your Score: ${score} / ${total}`;
+
+      if(score >= 12){
+
+        result.className = "result correct";
+
+      } else {
+
+        result.className = "result wrong";
+
+      }
+
+    }
+
+  </script>
 
 </body>
 </html>
